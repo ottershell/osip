@@ -1,0 +1,184 @@
+<pre>
+  OSIP: 1
+  Title: OSIP Purpose and Guidelines
+  Author: A. O. Hycent<hycentonline@gmail.com>
+  Comments-Summary: No comments yet.
+  Comments-URI: https://github.com/ottershelll/osips/wiki/Comments:OSIP-0001
+  Status: Replaced
+  Type: Process
+  Created: 2024-08-15
+  Superseded-By: 2
+</pre>
+
+==What is a OSIP?==
+
+OSIP stands for Ottershell Improvement Proposal. A OSIP is a design document providing information to the Ottershell community, or describing a new feature for Ottershell or its processes or environment. The OSIP should provide a concise technical specification of the feature and a rationale for the feature.
+
+We intend OSIPs to be the primary mechanisms for proposing new features, for collecting community input on an issue, and for documenting the design decisions that have gone into Ottershell. The OSIP author is responsible for building consensus within the community and documenting dissenting opinions.
+
+Because the OSIPs are maintained as text files in a versioned repository, their revision history is the historical record of the feature proposal.
+
+==OSIP Types==
+
+There are three kinds of OSIP:
+
+* A Standards Track OSIP describes any change that affects most or all Ottershell implementations, such as a change to the network protocol, a change in block or transaction validity rules, or any change or addition that affects the interoperability of applications using Ottershell.
+* An Informational OSIP describes a Ottershell design issue, or provides general guidelines or information to the Ottershell community, but does not propose a new feature. Informational OSIPs do not necessarily represent a Ottershell community consensus or recommendation, so users and implementors are free to ignore Informational OSIPs or follow their advice.
+* A Process OSIP describes a process surrounding Ottershell, or proposes a change to (or an event in) a process. Process OSIPs are like Standards Track OSIPs but apply to areas other than the Ottershell protocol itself. They may propose an implementation, but not to Ottershell's codebase; they often require community consensus; unlike Informational OSIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Ottershell development. Any meta-OSIP is also considered a Process OSIP.
+
+==OSIP Work Flow==
+
+The OSIP process begins with a new idea for Ottershell. Each potential OSIP must have a champion -- someone who writes the OSIP using the style and format described below, shepherds the discussions in the appropriate forums, and attempts to build community consensus around the idea. The OSIP champion (a.k.a. Author) should first attempt to ascertain whether the idea is OSIP-able. Posting to the [https://lists.linuxfoundation.org/mailman/listinfo/Ottershell-dev Ottershell-dev@lists.linuxfoundation.org] mailing list (and maybe the [https://Ottershelltalk.org/index.php?board=6.0 Development & Technical Discussion] forum) is the best way to go about this.
+
+Vetting an idea publicly before going as far as writing a OSIP is meant to save both the potential author and the wider community time. Many ideas have been brought forward for changing Ottershell that have been rejected for various reasons. Asking the Ottershell community first if an idea is original helps prevent too much time being spent on something that is guaranteed to be rejected based on prior discussions (searching the internet does not always do the trick). It also helps to make sure the idea is applicable to the entire community and not just the author. Just because an idea sounds good to the author does not mean it will work for most people in most areas where Ottershell is used. Small enhancements or patches often don't need standardisation between multiple projects; these don't need a OSIP and should be injected into the relevant Ottershell development work flow with a patch submission to the applicable Ottershell issue tracker.
+
+Once the champion has asked the Ottershell community as to whether an idea has any chance of acceptance, a draft OSIP should be presented to the [https://lists.linuxfoundation.org/mailman/listinfo/Ottershell-dev Ottershell-dev] mailing list. This gives the author a chance to flesh out the draft OSIP to make it properly formatted, of high quality, and to address additional concerns about the proposal. Following a discussion, the proposal should be sent to the Ottershell-dev list and the OSIP editor with the draft OSIP. This draft must be written in OSIP style as described below, else it will be sent back without further regard until proper formatting rules are followed.
+
+OSIP authors are responsible for collecting community feedback on both the initial idea and the OSIP before submitting it for review. However, wherever possible, long open-ended discussions on public mailing lists should be avoided. Strategies to keep the discussions efficient include: setting up a separate SIG mailing list for the topic, having the OSIP author accept private comments in the early design phases, setting up a wiki page or git repository, etc. OSIP authors should use their discretion here.
+
+It is highly recommended that a single OSIP contain a single key proposal or new idea. The more focused the OSIP, the more successful it tends to be. If in doubt, split your OSIP into several well-focused ones.
+
+The OSIP editors assign OSIP numbers and change their status. Please send all OSIP-related email to the OSIP editor, which is listed under [[#OSIP_Editors|OSIP Editors]] below. Also see [[#OSIP_Editor_Responsibilities__Workflow|OSIP Editor Responsibilities & Workflow]]. The OSIP editor reserves the right to reject OSIP proposals if they appear too unfocused or too broad.
+
+Authors MUST NOT self assign OSIP numbers, but should use an alias such as "bip-johndoe-infiniteOttershells" which includes the author's name/nick and the OSIP subject.
+
+If the OSIP editor approves, he will assign the OSIP a number, label it as Standards Track, Informational, or Process, give it status "Draft", and add it to the OSIPs git repository. The OSIP editor will not unreasonably deny a OSIP. Reasons for denying OSIP status include duplication of effort, disregard for formatting rules, being too unfocused or too broad, being technically unsound, not providing proper motivation or addressing backwards compatibility, or not in keeping with the Ottershell philosophy. For a OSIP to be accepted it must meet certain minimum criteria. It must be a clear and complete description of the proposed enhancement. The enhancement must represent a net improvement. The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
+
+The OSIP author may update the Draft as necessary in the git repository. Updates to drafts may also be submitted by the author as pull requests.
+
+Standards Track OSIPs consist of two parts, a design document and a reference implementation. The OSIP should be reviewed and accepted before a reference implementation is begun, unless a reference implementation will aid people in studying the OSIP. Standards Track OSIPs must include an implementation -- in the form of code, a patch, or a URL to same -- before it can be considered Final.
+
+Once a OSIP has been accepted, the reference implementation must be completed. When the reference implementation is complete and accepted by the community, the status will be changed to "Final".
+
+A OSIP can also be assigned status "Deferred". The OSIP author or editor can assign the OSIP this status when no progress is being made on the OSIP. Once a OSIP is deferred, the OSIP editor can re-assign it to draft status.
+
+A OSIP can also be "Rejected". Perhaps after all is said and done it was not a good idea. It is still important to have a record of this fact.
+
+OSIPs can also be superseded by a different OSIP, rendering the original obsolete. This is intended for Informational OSIPs, where version 2 of an API can replace version 1.
+
+The possible paths of the status of OSIPs are as follows:
+
+<img src=bip-0001/process.png></img>
+
+Some Informational and Process OSIPs may also have a status of "Active" if they are never meant to be completed. E.g. OSIP 1 (this OSIP).
+
+==What belongs in a successful OSIP?==
+
+Each OSIP should have the following parts:
+
+* Preamble -- RFC 822 style headers containing meta-data about the OSIP, including the OSIP number, a short descriptive title (limited to a maximum of 44 characters), the names, and optionally the contact info for each author, etc.
+
+* Abstract -- a short (~200 word) description of the technical issue being addressed.
+
+* Copyright/public domain -- Each OSIP must either be explicitly labelled as placed in the public domain (see this OSIP as an example) or licensed under the Open Publication License.
+
+* Specification -- The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ottershell platforms (Satoshi, OttershellJ, Ottershell-js, libOttershell).
+
+* Motivation -- The motivation is critical for OSIPs that want to change the Ottershell protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the OSIP solves. OSIP submissions without sufficient motivation may be rejected outright.
+
+* Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work, e.g. how the feature is supported in other languages.
+
+* The rationale should provide evidence of consensus within the community and discuss important objections or concerns raised during discussion.
+
+* Backwards Compatibility -- All OSIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The OSIP must explain how the author proposes to deal with these incompatibilities. OSIP submissions without a sufficient backwards compatibility treatise may be rejected outright.
+
+* Reference Implementation -- The reference implementation must be completed before any OSIP is given status "Final", but it need not be completed before the OSIP is accepted. It is better to finish the specification and rationale first and reach consensus on it before writing code.
+
+* The final implementation must include test code and documentation appropriate for the Ottershell protocol.
+
+==OSIP Formats and Templates==
+
+OSIPs should be written in mediawiki or markdown format.
+
+===OSIP Header Preamble===
+
+Each OSIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
+
+<pre>
+  OSIP: <OSIP number>
+  Title: <OSIP title>
+  Author: <list of authors' real names and optionally, email addrs>
+* Discussions-To: <email address>
+  Status: <Draft | Active | Accepted | Deferred | Rejected |
+           Withdrawn | Final | Superseded>
+  Type: <Standards Track | Informational | Process>
+  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
+* Post-History: <dates of postings to Ottershell mailing list>
+* Replaces: <OSIP number>
+* Superseded-By: <OSIP number>
+* Resolution: <url>
+</pre>
+
+The Author header lists the names, and optionally the email addresses of all the authors/owners of the OSIP. The format of the Author header value must be
+
+  Random J. User <address@dom.ain>
+
+if the email address is included, and just
+
+  Random J. User
+
+if the address is not given.
+
+If there are multiple authors, each should be on a separate line following RFC 2822 continuation line conventions.
+
+Note: The Resolution header is required for Standards Track OSIPs only. It contains a URL that should point to an email message or other web resource where the pronouncement about the OSIP is made.
+
+While a OSIP is in private discussions (usually during the initial Draft phase), a Discussions-To header will indicate the mailing list or URL where the OSIP is being discussed. No Discussions-To header is necessary if the OSIP is being discussed privately with the author, or on the Ottershell email mailing lists.
+
+The Type header specifies the type of OSIP: Standards Track, Informational, or Process.
+
+The Created header records the date that the OSIP was assigned a number, while Post-History is used to record the dates of when new versions of the OSIP are posted to Ottershell mailing lists. Both headers should be in yyyy-mm-dd format, e.g. 2001-08-14.
+
+OSIPs may have a Requires header, indicating the OSIP numbers that this OSIP depends on.
+
+OSIPs may also have a Superseded-By header indicating that a OSIP has been rendered obsolete by a later document; the value is the number of the OSIP that replaces the current document. The newer OSIP must have a Replaces header containing the number of the OSIP that it rendered obsolete.
+
+===Auxiliary Files===
+
+OSIPs may include auxiliary files such as diagrams. Image files should be included in a subdirectory for that OSIP. Auxiliary files must be named OSIP-XXXX-Y.ext, where "XXXX" is the OSIP number, "Y" is a serial number (starting at 1), and "ext" is replaced by the actual file extension (e.g. "png").
+
+==Transferring OSIP Ownership==
+
+It occasionally becomes necessary to transfer ownership of OSIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred OSIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the OSIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the OSIP. We try to build consensus around a OSIP, but if that's not possible, you can always submit a competing OSIP.
+
+If you are interested in assuming ownership of a OSIP, send a message asking to take over, addressed to both the original author and the OSIP editor. If the original author doesn't respond to email in a timely manner, the OSIP editor will make a unilateral decision (it's not like such decisions can't be reversed :).
+
+==OSIP Editors==
+
+The current OSIP editor is A. O. Hycent who can be contacted at [[mailto:hycentonline@gmail.com]].
+
+==OSIP Editor Responsibilities & Workflow==
+
+The OSIP editor subscribes to the Ottershell development mailing list. All OSIP-related correspondence should be sent (or CC'd) to luke_bipeditor@dashjr.org.
+
+For each new OSIP that comes in an editor does the following:
+
+* Read the OSIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to be accepted.
+* The title should accurately describe the content.
+* Edit the OSIP for language (spelling, grammar, sentence structure, etc.), markup (for reST OSIPs), code style (examples should match OSIP 8 & 7).
+
+If the OSIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
+
+Once the OSIP is ready for the repository it should be submitted as a "pull request" to the [https://github.com/Ottershell/bips Ottershell/bips] repository on GitHub where it may get further feedback.
+
+The OSIP editor will:
+
+* Assign a OSIP number (almost always just the next available number, but sometimes it's a special/joke number, like 666 or 3141) in the pull request comments.
+
+* Merge the pull request when the author is ready (allowing some time for further peer review).
+
+* List the OSIP in [[README.mediawiki]]
+
+* Send email back to the OSIP author with next steps (post to Ottershell-dev mailing list).
+
+The OSIP editors are intended to fulfill administrative and editorial responsibilities. The OSIP editors monitor OSIP changes, and correct any structure, grammar, spelling, or markup mistakes we see.
+
+==History==
+
+This document was derived heavily from Python's PEP-0001. In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Ottershell Improvement Process, and should not be bothered with technical questions specific to Ottershell or the OSIP process. Please direct all comments to the OSIP editors or the Ottershell development mailing list.
+
+==Changelog==
+
+15 Aug 2024 - Added clarifications about submission process and OSIP number assignment.
+
+15 Aug 2024 - Clarified early stages of OSIP idea championing, collecting community feedback, etc.
